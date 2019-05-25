@@ -1,5 +1,5 @@
-set(PMM_CONAN_MIN_VERSION 1.8.0     CACHE INTERNAL "Minimum Conan version we support")
-set(PMM_CONAN_MAX_VERSION 1.99999.0 CACHE INTERNAL "Maximum Conan version we support")
+set(PMM_CONAN_MIN_VERSION 1.14.0  CACHE INTERNAL "Minimum Conan version we support")
+set(PMM_CONAN_MAX_VERSION 1.15.99 CACHE INTERNAL "Maximum Conan version we support")
 
 
 # Get Conan in a new virtualenv using the Python interpreter specified by the
