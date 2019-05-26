@@ -660,6 +660,7 @@ function(_pmm_script_main_conan)
             /Version
             /Create
             /Upload
+            /Clean
             /Export
             /Install
             /Upgrade
@@ -721,6 +722,11 @@ function(_pmm_script_main_conan)
         if(retc)
             message(FATAL_ERROR "Export failed [${retc}]")
         endif()
+    endif()
+
+    if(ARG_/Clean)
+        _pmm_ensure_conan()
+        execute_process(COMMAND "${PMM_CONAN_EXECUTABLE}" remove * -fsb)
     endif()
 
     if(ARG_/Upload)
