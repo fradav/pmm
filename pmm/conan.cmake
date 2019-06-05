@@ -1,5 +1,5 @@
-set(PMM_CONAN_MIN_VERSION 1.14.0  CACHE INTERNAL "Minimum Conan version we support")
-set(PMM_CONAN_MAX_VERSION 1.15.99 CACHE INTERNAL "Maximum Conan version we support")
+set(PMM_CONAN_MIN_VERSION 1.15.0  CACHE INTERNAL "Minimum Conan version we support")
+set(PMM_CONAN_MAX_VERSION 1.16.99 CACHE INTERNAL "Maximum Conan version we support")
 
 
 # Get Conan in a new virtualenv using the Python interpreter specified by the
@@ -384,7 +384,7 @@ function(_pmm_conan_get_settings out)
 
     if(NOT ARG_SETTINGS MATCHES ";?cppstd=")
         if(CMAKE_CXX_STANDARD)
-            list(APPEND ret cppstd=${CMAKE_CXX_STANDARD})
+            list(APPEND ret compiler.cppstd=${CMAKE_CXX_STANDARD})
         endif()
     endif()
 
