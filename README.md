@@ -191,7 +191,7 @@ packages that you want to use.
 ## `CMakeCM` PMM mode
 
 If `CMakeCM` is provided, PMM will download and make available the [CMake
-Community Modules](https://github.com/vector-of-bool/CMakeCM) for you project.
+Community Modules](https://github.com/AnotherFoxGuy/CMakeCM) for you project.
 
 Once the `pmm()` function is run, you may `include` or `find_package` any of the
 modules provided by `CMakeCM`.
