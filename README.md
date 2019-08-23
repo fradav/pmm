@@ -1,7 +1,6 @@
 ![PMM](data/icon_128.png?raw=true)
 
 # PMM - The Package Manager Manager
-[![Build Status](https://dev.azure.com/AnotherFoxGuy/PMM/_apis/build/status/AnotherFoxGuy.pmm?branchName=master)](https://dev.azure.com/AnotherFoxGuy/PMM/_build/latest?definitionId=3&branchName=master)
 
 PMM is a module for CMake that manages... package managers.
 
