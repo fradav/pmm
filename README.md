@@ -2,6 +2,15 @@
 
 # PMM - The Package Manager Manager
 
+![build-status](https://flat.badgen.net/github/status/AnotherFoxGuy/pmm/master?label=build%20status)
+![release](https://flat.badgen.net/github/release/AnotherFoxGuy/pmm)
+![last commit](https://flat.badgen.net/github/last-commit/AnotherFoxGuy/pmm)
+![stars](https://flat.badgen.net/github/stars/AnotherFoxGuy/pmm)
+![forks](https://flat.badgen.net/github/forks/AnotherFoxGuy/pmm)
+![issues](https://flat.badgen.net/github/open-issues/AnotherFoxGuy/pmm)
+![issues-pr](https://flat.badgen.net/github/open-prs/AnotherFoxGuy/pmm)
+![contributors](https://flat.badgen.net/github/contributors/AnotherFoxGuy/pmm)
+
 PMM is a module for CMake that manages... package managers.
 
 ## Wha- Why?
