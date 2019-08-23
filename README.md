@@ -100,6 +100,8 @@ pmm(
         [OPTIONS ...]
         # Set the --build option. (Default is `missing`)
         [BUILD <policy>]
+        # Use a custom profile instead of the auto-generated profile created by PMM
+        [PROFILE <profile_name>]
         # Ensure remotes are present before installing
         [REMOTES [<name>[::no_verify] <url> [...]]]
         # Enable the Bincrafters repository
