@@ -1,49 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Package Manager Manager</title>
+    <title>PMM - The C++ Package Manager Manager</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="description" content="It's the C++ Package Manager Manager ">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/dark.css">
     <style>
-        body {
-            background-color: #eee;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: justify;
-        }
-
-        div.main {
-            margin: 0 auto;
-            max-width: 500px;
-        }
-
-        h1:first-child {
-            margin-top: 0;
+        :root {
+            --theme-color: #ff8000;
         }
     </style>
 </head>
-
 <body>
-    <div class="main">
-        <h1>Hello!</h1>
-        <p class="text">
-            You've found the Package Manager Manager servicing page, but this
-            probably isn't where you wanted to be. This is a placeholder page
-            in case you accidentally navigated here on your own.
-        </p>
-        <p class=text>
-            Try one of these handy links:
-            <ul>
-                <li><a href="https://github.com/AnotherFoxGuy/pmm">The PMM GitHub Repository</a></li>
-            </ul>
-        </p>
-    </div>
+<div id="app"></div>
+<script>
+    window.$docsify = {
+        name: 'PMM',
+        repo: 'AnotherFoxGuy/pmm',
+        loadNavbar: true,
+        coverpage: true,
+        search: 'auto',
+        'flexible-alerts': {
+            style: 'flat'
+        }
+    }
+</script>
+<script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+<script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
+<script src="//unpkg.com/docsify/lib/plugins/emoji.min.js"></script>
+<script src="//unpkg.com/docsify-copy-code"></script>
+<script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
+<script src="//unpkg.com/prismjs/components/prism-cmake.min.js"></script>
+<script src="https://unpkg.com/docsify-plugin-flexible-alerts"></script>
+<script>
+    if (typeof navigator.serviceWorker !== 'undefined') {
+        navigator.serviceWorker.register('offline.js')
+    }
+</script>
 </body>
-
 </html>
