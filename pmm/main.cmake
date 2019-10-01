@@ -117,6 +117,6 @@ Available options:
     if (ARG_/Conan)
         _pmm_script_main_conan(${ARG_UNPARSED_ARGUMENTS})
     else ()
-        message(FATAL_ERROR "PMM did not recognise the given argument list")
+        _pmm_log(FATAL_ERROR "PMM did not recognise the given argument list")
     endif ()
 endfunction()

@@ -7,7 +7,7 @@ set(PMM_DEBUG TRUE)
 
 include(../../pmm.cmake)
 
-pmm(CONAN DEBUG)
+pmm(CONAN)
 
 add_executable(dummy main.cpp)
 target_link_libraries(dummy PRIVATE CONAN_PKG::Catch2)
