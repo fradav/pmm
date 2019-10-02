@@ -7,7 +7,7 @@ function(_pmm_changes version)
     endif ()
 endfunction()
 
-set(PMM_LATEST_VERSION 1.7.0)
+set(PMM_LATEST_VERSION 1.7.1)
 
 if (PMM_VERSION VERSION_LESS PMM_LATEST_VERSION AND NOT PMM_IGNORE_NEW_VERSION)
     message(STATUS "[pmm] You are using PMM version ${PMM_VERSION}. The latest is ${PMM_LATEST_VERSION}.")
@@ -98,6 +98,10 @@ if (PMM_VERSION VERSION_LESS PMM_LATEST_VERSION AND NOT PMM_IGNORE_NEW_VERSION)
             "Fixed cmake_multi not installing packages in Release"
             "Added UpdatePackages command"
             "Reworked Conan install logic"
+            )
+    _pmm_changes(1.7.1
+            "Upgrade Conan to V1.19"
+            "Cherry-picked some bugfixes from the original repo"
             )
     message(STATUS "[pmm] To update, simply change the value of PMM_VERSION_INIT in pmm.cmake")
     message(STATUS "[pmm] You can disable these messages by setting PMM_IGNORE_NEW_VERSION to TRUE before including pmm.cmake")
