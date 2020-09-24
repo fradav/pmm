@@ -64,8 +64,8 @@ function(_pmm_ensure_vcpkg dir rev)
             ${CMAKE_COMMAND} -E env
                 CC=${CMAKE_C_COMPILER}
                 CXX=${CMAKE_CXX_COMPILER}
-                VCPKG_FORCE_SYSTEM_BINARIES=1
             "${vcpkg_root}/bootstrap-vcpkg.${bootstrap_ext}"
+            -useSystemBinaries
             ${no_eat}
         )
     if(_PMM_RC)
@@ -181,7 +181,6 @@ endfunction()
 
 function(_pmm_vcpkg)
     _pmm_parse_args(
-        . USESYSTEMBINARIES
         - REVISION TRIPLET
         + REQUIRES PORTS
         )
@@ -221,8 +220,4 @@ function(_pmm_vcpkg)
         endif()
     endif()
     set(_PMM_INCLUDE "${vcpkg_inst_dir}/scripts/buildsystems/vcpkg.cmake" PARENT_SCOPE)
-    if (ARG_USESYSTEMBINARIES)
-        _pmm_log("use system binaries set")
-        set(__PMM_VCPKG_BOOTSTRAP_ARGS "-useSystemBinaries")
-    endif()
 endfunction()
