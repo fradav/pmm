@@ -65,6 +65,7 @@ function(_pmm_ensure_vcpkg dir rev)
                 CC=${CMAKE_C_COMPILER}
                 CXX=${CMAKE_CXX_COMPILER}
             "${vcpkg_root}/bootstrap-vcpkg.${bootstrap_ext}"
+            __PMM_VCPKG_BOOTSTRAP_ARGS
             ${no_eat}
         )
     if(_PMM_RC)
@@ -182,6 +183,7 @@ function(_pmm_vcpkg)
     _pmm_parse_args(
         - REVISION TRIPLET
         + REQUIRES PORTS
+        . USESYSTEMBINARIES
         )
 
     if (NOT DEFINED ARG_REVISION)
@@ -219,4 +221,6 @@ function(_pmm_vcpkg)
         endif()
     endif()
     set(_PMM_INCLUDE "${vcpkg_inst_dir}/scripts/buildsystems/vcpkg.cmake" PARENT_SCOPE)
+    if (DEFINED ARG_USESYSTEMBINARIES)
+        set(__PMM_VCPKG_BOOTSTRAP_ARGS "-useSystemBinaries")
 endfunction()
