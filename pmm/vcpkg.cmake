@@ -64,7 +64,8 @@ function(_pmm_ensure_vcpkg dir rev)
             ${CMAKE_COMMAND} -E env
                 CC=${CMAKE_C_COMPILER}
                 CXX=${CMAKE_CXX_COMPILER}
-            "${vcpkg_root}/bootstrap-vcpkg.${bootstrap_ext} ${__PMM_VCPKG_BOOTSTRAP_ARGS}"
+            "${vcpkg_root}/bootstrap-vcpkg.${bootstrap_ext}"
+            ${__PMM_VCPKG_BOOTSTRAP_ARGS}
             ${no_eat}
         )
     if(_PMM_RC)
