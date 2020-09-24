@@ -181,9 +181,9 @@ endfunction()
 
 function(_pmm_vcpkg)
     _pmm_parse_args(
+        . USESYSTEMBINARIES
         - REVISION TRIPLET
         + REQUIRES PORTS
-        . USESYSTEMBINARIES
         )
 
     if (NOT DEFINED ARG_REVISION)
