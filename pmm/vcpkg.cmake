@@ -60,6 +60,9 @@ function(_pmm_ensure_vcpkg dir rev)
     if(PMM_DEBUG)
         set(no_eat NO_EAT_OUTPUT)
     endif()
+    if(__PMM_VCPKG_BOOTSTRAP_ARGS)
+        _pmm_log("Adding ${__PMM_VCPKG_BOOTSTRAP_ARGS} option to vcpkg")
+    endif()
     _pmm_exec(
             ${CMAKE_COMMAND} -E env
                 CC=${CMAKE_C_COMPILER}
