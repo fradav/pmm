@@ -60,15 +60,12 @@ function(_pmm_ensure_vcpkg dir rev)
     if(PMM_DEBUG)
         set(no_eat NO_EAT_OUTPUT)
     endif()
-    if(__PMM_VCPKG_BOOTSTRAP_ARGS)
-        _pmm_log("Adding ${__PMM_VCPKG_BOOTSTRAP_ARGS} option to vcpkg")
-    endif()
     _pmm_exec(
             ${CMAKE_COMMAND} -E env
                 CC=${CMAKE_C_COMPILER}
                 CXX=${CMAKE_CXX_COMPILER}
+                VCPKG_FORCE_SYSTEM_BINARIES=1
             "${vcpkg_root}/bootstrap-vcpkg.${bootstrap_ext}"
-            ${__PMM_VCPKG_BOOTSTRAP_ARGS}
             ${no_eat}
         )
     if(_PMM_RC)
@@ -224,7 +221,7 @@ function(_pmm_vcpkg)
         endif()
     endif()
     set(_PMM_INCLUDE "${vcpkg_inst_dir}/scripts/buildsystems/vcpkg.cmake" PARENT_SCOPE)
-    if (DEFINED ARG_USESYSTEMBINARIES)
+    if (ARG_USESYSTEMBINARIES)
         _pmm_log("use system binaries set")
         set(__PMM_VCPKG_BOOTSTRAP_ARGS "-useSystemBinaries")
     endif()
