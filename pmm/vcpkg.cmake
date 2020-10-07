@@ -60,12 +60,15 @@ function(_pmm_ensure_vcpkg dir rev)
     if(PMM_DEBUG)
         set(no_eat NO_EAT_OUTPUT)
     endif()
+    if (UNIX)
+        set(VCPKG_USE_SYSTEMBINARIES -useSystemBinaries)
+    endif()
     _pmm_exec(
             ${CMAKE_COMMAND} -E env
                 CC=${CMAKE_C_COMPILER}
                 CXX=${CMAKE_CXX_COMPILER}
             "${vcpkg_root}/bootstrap-vcpkg.${bootstrap_ext}"
-            -useSystemBinaries
+            "${VCPKG_USE_SYSTEMBINARIES}"
             ${no_eat}
         )
     if(_PMM_RC)
